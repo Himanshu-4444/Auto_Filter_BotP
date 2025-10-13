@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<!-- This document was coded by @bharath_boy || please do not remove this credit -->
+<!-- This document was coded by @VisualMovies1 || please do not remove this credit -->
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DreamXbotz | {{file_name}}</title>
+    <title>VisualMoviesStudio | {{file_name}}</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
 
     <style>
-        /* Stylesheet created by @bharath_boy || kindly retain this credit notice */
+        /* Stylesheet created by @VisualMovies1 || kindly retain this credit notice */
         :root {
             --primary-cyan: #06b6d4;
             --primary-purple: #8b5cf6;
@@ -46,7 +46,7 @@
             min-height: 100vh;
         }
 
-        /* The following styles were written by @bharath_boy || do not remove credit */
+        /* The following styles were written by @VisualMovies1 || do not remove credit */
         #particle-canvas {
             position: fixed;
             top: 0;
@@ -75,7 +75,7 @@
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
 
-        /* Code credit: @bharath_boy || this line should not be removed */
+        /* Code credit: @VisualMovies1 || this line should not be removed */
         .header {
             position: fixed;
             top: 0;
@@ -188,7 +188,7 @@
             display: block;
         }
 
-        /* Authored by @bharath_boy || please leave this credit intact */
+        /* Authored by @VisualMovies1 || please leave this credit intact */
         .mobile-nav a {
             display: block;
             padding: 1rem;
@@ -250,7 +250,7 @@
             display: block;
         }
 
-        /* This CSS was crafted by @bharath_boy || credit removal is not permitted */
+        /* This CSS was crafted by @VisualMovies1 || credit removal is not permitted */
         .info-panel {
             border-radius: 1.5rem;
             padding: 2rem;
@@ -367,7 +367,7 @@
             background: var(--primary-purple);
         }
 
-        /* Code by @bharath_boy || we request you keep the credit */
+        /* Code by @VisualMovies1 || we request you keep the credit */
         .action-buttons {
             display: flex;
             gap: 1rem;
@@ -473,7 +473,7 @@
             transform: scale(1.05);
         }
 
-        /* @bharath_boy is the author of this style block || please maintain attribution */
+        /* @VisualMovies1 is the author of this style block || please maintain attribution */
         .player-btn img {
             width: 24px;
             height: 24px;
@@ -527,7 +527,7 @@
             transition: opacity 0.3s ease;
         }
 
-        /* This section was styled by @bharath_boy || don't erase the credit */
+        /* This section was styled by @VisualMovies1 || don't erase the credit */
         .info-card:hover::before {
             opacity: 0.6;
         }
@@ -597,6 +597,21 @@
 
         .card-btn:nth-child(3) {
             background: linear-gradient(135deg, var(--primary-pink), #db2777);
+            color: white;
+        }
+
+        .card-btn:nth-child(4) {
+            background: linear-gradient(135deg, var(--primary-pink), #c4dc25);
+            color: white;
+        }
+
+        .card-btn:nth-child(5) {
+            background: linear-gradient(135deg, var(--primary-pink), #d401fe);
+            color: white;
+        }
+
+        .card-btn:nth-child(6) {
+            background: linear-gradient(135deg, var(--primary-pink), #211ae4);
             color: white;
         }
 
@@ -711,24 +726,24 @@
             border-radius: 4px;
         }
 
-        /* Written by @bharath_boy || the credit should not be deleted */
+        /* Written by @VisualMovies1 || the credit should not be deleted */
     </style>
 </head>
 
 <body>
-    <!-- The author of this code is @bharath_boy || please keep the credit -->
+    <!-- The author of this code is @VisualMovies1 || please keep the credit -->
     <canvas id="particle-canvas"></canvas>
     <div class="gradient-overlay"></div>
     <div class="cursor-dot"></div>
 
     <header class="header">
         <div class="header-content">
-            <a href="https://t.me/dreamxbotz" class="logo">DreamXbotz</a>
+            <a href="https://telegram.me/VisualMovies1" class="logo">VisualMoviesStudio</a>
 
             <nav class="nav">
                 <a href="#video-section">Stream</a>
                 <a href="#explore-section">Explore</a>
-                <a href="http://t.me/BHARATHboi_bot">Contact</a>
+                <a href="https://telegram.me/ClipmateMoviesAssistantBot">Contact</a>
             </nav>
 
             <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
@@ -739,16 +754,16 @@
         <nav class="mobile-nav" id="mobile-nav">
             <a href="#video-section" onclick="closeMobileMenu()">Stream</a>
             <a href="#explore-section" onclick="closeMobileMenu()">Explore</a>
-            <a href="http://t.me/BHARATHboi_bot" onclick="closeMobileMenu()">Contact</a>
+            <a href="https://telegram.me/ClipmateMoviesAssistantBot" onclick="closeMobileMenu()">Contact</a>
         </nav>
     </header>
 
     <div class="main-container">
         <main>
-            <!-- Coded by @bharath_boy || it's requested not to remove the credit -->
+            <!-- Coded by @VisualMovies1 || it's requested not to remove the credit -->
             <section id="video-section" class="video-section">
                 <div class="video-container glass">
-                    <video id="player" playsinline controls data-poster="https://envs.sh/34_.jpg?x=bcb2b992">
+                    <video id="player" playsinline controls data-poster="https://envs.sh/CGy.png">
                         <source src="{{file_url}}" type="video/mp4" />
                     </video>
                 </div>
@@ -816,14 +831,18 @@
                 <div class="cards-container">
                     <div class="info-card glass fade-in">
                         <div class="card-icon">
-                            <img src="https://i.postimg.cc/L546cM3F/erasebg-transformed.png" alt="Channel Logo">
+                            <img src="https://i.postimg.cc/qBhDbJRL/Visual-Logo.jpg" alt="Channel Logo">
                         </div>
                         <h3>Our Channels</h3>
                         <p>Get the latest updates from our main channel for exclusive content and real-time
                             notifications.</p>
                         <div class="card-links">
-                            <a href="https://t.me/Blaze_Updatez" class="card-btn">Join Blaze Updates</a>
-                            <a href="https://t.me/anime_cartoon_stickers" class="card-btn">Anime Stickers</a>
+                            <a href="https://telegram.me/VisualMovies1" class="card-btn">Visual Movies Official</a>
+                            <a href="https://telegram.me/All_Movies_HD2" class="card-btn">All Movies HD Official</a>
+                            <a href="https://telegram.me/MOBODROID3" class="card-btn">MOBODROID©️</a>
+                            <a href="https://telegram.me/AmazonDealsFlipkartLoots1" class="card-btn">NonStopDeals 3.0</a>
+                            <a href="https://telegram.me/OfferBox_3" class="card-btn">Offer Box 2.0</a>
+                            <a href="https://telegram.me/PrimeSavers_3" class="card-btn">Prime Savers 3</a>
                         </div>
                     </div>
 
@@ -835,9 +854,10 @@
                         <p>Interact with our intelligent bots for an enhanced streaming experience and automated
                             assistance.</p>
                         <div class="card-links">
-                            <a href="https://t.me/Blaze_Moviesposter_downloaderbot" class="card-btn">PosterFlix Bot</a>
-                            <a href="https://t.me/video_thumbcover_changerbot" class="card-btn">Thumb Changer</a>
-                            <a href="https://t.me/Blaze_forward_bot" class="card-btn">Forward Bot Pro</a>
+                            <a href="https://telegram.me/VisualMoviesBot" class="card-btn">Visual Movies™ Bot¹</a>
+                            <a href="https://telegram.me/VisualMovies2Bot" class="card-btn">Visual Movies™ Bot²</a>
+                            <a href="https://telegarm.me/VisualMovies3Bot" class="card-btn">Visual Movies™ Bot³</a>
+                            <a href="https://telegram.me/ALL_MOVIES_HD_DOWNLOAD_BOT" class="card-btn">All Movies HD Bot</a>
                             <!-- <a href="#" class="card-btn">Dummy Bot Button</a> -->
                         </div>
                     </div>
@@ -845,16 +865,16 @@
             </section>
         </main>
     </div>
-    <!-- Credit @bharath_boy for this markup || do not delete this comment -->
+    <!-- Credit @VisualMovies1 for this markup || do not delete this comment -->
     <footer class="footer">
-        <p>&copy; 2025 <a href="https://t.me/dreamxbotz">DreamXbotz</a>. All Rights Reserved.</p>
+        <p>&copy; 2025 <a href="https://telegram.me/VisualMovies1">VisualMoviesStudio</a>. All Rights Reserved.</p>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
 
     <script>
-        // Script authored by @bharath_boy || please do not remove credit.
+        // Script authored by @VisualMovies1 || please do not remove credit.
         // Global variables
         let particles = [];
         let mouse = { x: 0, y: 0 };
@@ -876,7 +896,7 @@
             });
         }
 
-        // The following script is by @bharath_boy || kindly keep this credit.
+        // The following script is by @VisualMovies1 || kindly keep this credit.
         // Advanced particle system
         function initializeParticles() {
             const canvas = document.getElementById('particle-canvas');
@@ -956,7 +976,7 @@
             animateParticles();
         }
 
-        // Author: @bharath_boy || credit removal is not allowed.
+        // Author: @VisualMovies1 || credit removal is not allowed.
         function initializeAnimations() {
             document.querySelectorAll('.info-card').forEach(card => {
                 card.addEventListener('mousemove', (e) => {
@@ -1024,7 +1044,7 @@
                 observer.observe(el);
             });
         }
-        // This function was coded by @bharath_boy || don't remove the credit line.
+        // This function was coded by @VisualMovies1 || don't remove the credit line.
         function initializeCursor() {
             const cursor = document.querySelector('.cursor-dot');
 
@@ -1085,7 +1105,7 @@
                 menuBtn.className = 'fas fa-bars';
             }
         }
-        // @bharath_boy wrote this script || please maintain the credit.
+        // @VisualMovies1 wrote this script || please maintain the credit.
         function closeMobileMenu() {
             document.getElementById('mobile-nav').classList.remove('active');
             document.querySelector('.mobile-menu-btn i').className = 'fas fa-bars';
@@ -1247,7 +1267,7 @@
         };
         const videoUrl = getCurrentUrl();
         const e = videoUrl;
-        // Credit for this JavaScript goes to @bharath_boy || please do not remove.
+        // Credit for this JavaScript goes to @VisualMovies1 || please do not remove.
         function vlc_player() { const x = e.replace(/^https?:\/\//, ""); window.location.href = `vlc://${x}`; event.preventDefault(); }
         function mx_player() { window.location.href = `intent:${e}#Intent;action=android.intent.action.VIEW;type=video/*;package=com.mxtech.videoplayer.ad;end`; event.preventDefault(); }
         function mx_playerpro() { window.location.href = `intent:${e}#Intent;action=android.intent.action.VIEW;type=video/*;package=com.mxtech.videoplayer.pro;end`; event.preventDefault(); }
@@ -1255,7 +1275,7 @@
         function km_player() { window.location.href = `intent:${e}#Intent;package=com.kmplayer;end`; event.preventDefault(); }
         function s_player() { window.location.href = `intent:${e}#Intent;action=com.young.simple.player.playback_online;package=com.young.simple.player;end`; event.preventDefault(); }
         function hd_player() { window.location.href = `intent:${e}#Intent;package=uplayer.video.player;end`; event.preventDefault(); }
-        // Coded by @bharath_boy || the credit must be kept.
+        // Coded by @VisualMovies1 || the credit must be kept.
     </script>
 </body>
 
