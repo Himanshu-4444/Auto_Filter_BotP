@@ -15,7 +15,7 @@ from database.config_db import mdb
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message, ReplyKeyboardMarkup
 from pyrogram import Client, filters, enums
 from pyrogram.errors import FloodWait, ChatAdminRequired, UserNotParticipant
-from database.ia_filterdb import Media, Media2, get_file_details, unpack_new_file_id, get_bad_files
+from database.ia_filterdb import Media, Media2, get_file_details, unpack_new_file_id, get_bad_files, save_file
 from database.users_chats_db import db
 from info import *
 from utils import get_settings, save_group_settings, is_subscribed, is_req_subscribed, get_size, get_shortlink, is_check_admin, temp, get_readable_time, get_time, generate_settings_text, log_error, clean_filename
@@ -468,6 +468,36 @@ async def log_file(bot, message):
         await message.reply_document('DreamXlogs.txt', caption="📑 **ʟᴏɢꜱ**")
     except Exception as e:
         await message.reply(str(e))
+
+@Client.on_message(filters.command('save') & filters.user(ADMINS))
+async def save_file_handler(bot, message):
+    """Save file to database"""
+    reply = message.reply_to_message
+    if reply and reply.media:
+        msg = await message.reply("Pʀᴏᴄᴇssɪɴɢ...⏳", quote=True)
+    else:
+        await message.reply('Rᴇᴘʟʏ ᴛᴏ ғɪʟᴇ ᴡɪᴛʜ /save ᴡʜɪᴄʜ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ sᴀᴠᴇ', quote=True)
+        return
+
+    for file_type in ("document", "video", "audio"):
+        media = getattr(reply, file_type, None)
+        if media is not None:
+            break
+    else:
+        await msg.edit('Tʜɪs ɪs ɴᴏᴛ sᴜᴘᴘᴏʀᴛᴇᴅ ғɪʟᴇ ғᴏʀᴍᴀᴛ')
+        return
+    
+    file_id, file_ref = unpack_new_file_id(media.file_id)
+    success, status = await save_file(media)
+    
+    if success:
+        await msg.edit('Fɪʟᴇ ɪs sᴜᴄᴄᴇssғᴜʟʟʏ sᴀᴠᴇᴅ ᴛᴏ ᴅᴀᴛᴀʙᴀsᴇ ✅')
+    elif status == 0:
+        await msg.edit('Fɪʟᴇ ᴀʟʀᴇᴀᴅʏ ᴇxɪsᴛs ɪɴ ᴅᴀᴛᴀʙᴀsᴇ ⚠️')
+    elif status == 2:
+        await msg.edit('Eʀʀᴏʀ: Fɪʟᴇ ᴠᴀʟɪᴅᴀᴛɪᴏɴ ғᴀɪʟᴇᴅ ❌')
+    else:
+        await msg.edit('Eʀʀᴏʀ: Fᴀɪʟᴇᴅ ᴛᴏ sᴀᴠᴇ ғɪʟᴇ ❌')
 
 @Client.on_message(filters.command('delete') & filters.user(ADMINS))
 async def delete(bot, message):
