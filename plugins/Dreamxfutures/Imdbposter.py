@@ -95,7 +95,7 @@ async def get_movie_details(query, id=False, file=None):
             if not filtered_kind:
                 logger.info("No matches found for kind 'movie' or 'tv series', falling back to filtered list.")
                 movieid = filtered
-                else:
+            else:
                 movieid = filtered_kind
             
             movieid = movieid[0].movieID
