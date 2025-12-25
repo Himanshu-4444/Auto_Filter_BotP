@@ -33,7 +33,7 @@ async def fetch_image(url, size=(860, 1200)):
     try:
         session = await get_session()
 
-                async with session.get(url) as response:
+        async with session.get(url) as response:
             if response.status != 200:
                 logger.error(f"Failed to fetch image: {response.status} for {url}")
                 return None
