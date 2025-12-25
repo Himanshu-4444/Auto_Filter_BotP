@@ -14,13 +14,12 @@ from plugins.Dreamxfutures.Imdbposter import get_movie_detailsx
 from info import ADMINS, MOVIE_UPDATE_CHANNEL, ABOVE_PREVIEW
 from utils import temp
 
-#code is created by @VisualMovies1 for public use so atleast don't remove credits
+#code is created by @bharath_boy for public use so atleast don't remove credits
 logger = logging.getLogger(__name__)
 post_sessions = {}
 
-BOT_NAME = temp.U_NAME
 USE_GETFILE_BUTTON_BY_DEFAULT = True
-DEFAULT_WATERMARK = "Join [Visual Movies Studio](https://telegram.me/VisualMovies1)"
+DEFAULT_WATERMARK = "Join [ᴅʀᴇᴀᴍxʙᴏᴛᴢ](https://t.me/dreamxbotz)"
 LANGUAGES_FORMAT = "➥ <b>Languages :</b> <code>{langs}</code>"
 RESOLUTIONS_FORMAT = "\n➥ <b>Qualities :</b> <code>{resolutions}</code>"
 OTT_FORMAT = "\n➥ <b>Available on :</b> <code>{otts}</code>"
@@ -142,7 +141,7 @@ async def post_command(client: Client, message: Message):
 
     await start_post_session(client, message, user_id, movie_name)
 
-#code is created by @VisualMovies1 for public use so atleast don't remove credits
+#code is created by @bharath_boy for public use so atleast don't remove credits
 async def start_post_session(client: Client, message: Message, user_id: int, movie_name: str):
     movie_details = await get_movie_detailsx(movie_name)
     if not movie_details:
@@ -175,7 +174,7 @@ async def start_post_session(client: Client, message: Message, user_id: int, mov
         year = movie_details.get("year", "")
         movie_year = f"{title} {year}".strip()
         movie_year = re.sub(r"[ *:\.]", "-", movie_year)
-        url = f"https://t.me/{BOT_NAME}?start=getfile-{movie_year}"
+        url = f"https://telegram.me/{temp.U_NAME}?start=getfile-{movie_year}"
         post_sessions[user_id]["buttons"].append(
             [InlineKeyboardButton("📥 Get Files 📥", url=url)])
         logger.info(f"Default 'Get Files' button added for session {user_id}")
@@ -217,7 +216,7 @@ async def _build_final_post_content(session: dict, session_id: int):
 
     return final_caption, keyboard, poster_to_use
 
-#code is created by @VisualMovies1 for public use so atleast don't remove credits
+#code is created by @bharath_boy for public use so atleast don't remove credits
 async def update_post_preview(client: Client, session_id: int, chat_id: int, force_resend: bool = False):
     session = post_sessions.get(session_id)
     if not session:
@@ -282,7 +281,7 @@ def build_keyboard(session: dict, session_id: int):
     ])
     return InlineKeyboardMarkup(rows)
 
-#code is created by @VisualMovies1 for public use so atleast don't remove credits
+#code is created by @bharath_boy for public use so atleast don't remove credits
 @Client.on_callback_query(filters.regex(r"^post:"), group=-4)
 async def post_callbacks(client: Client, query: CallbackQuery):
     data_parts = query.data.split(":")
@@ -380,7 +379,7 @@ async def post_callbacks(client: Client, query: CallbackQuery):
 
     await update_post_preview(client, session_id, query.message.chat.id, force_resend)
 
-#code is created by @VisualMovies1 for public use so atleast don't remove credits
+#code is created by @bharath_boy for public use so atleast don't remove credits
 async def show_selection_menu(query: CallbackQuery, session_id: int, menu_type: str):
     session = post_sessions[session_id]
 
@@ -454,7 +453,7 @@ async def handle_add_get_files(session):
         title = movie_details.get("title", "movie")
         year = movie_details.get("year", "")
         movie_year = f"{title} {year}".strip()
-        url = f"https://t.me/{BOT_NAME}?start=getfile-{movie_year.replace(' ', '-')}"
+        url = f"https://telegram.me/{temp.U_NAME}?start=getfile-{movie_year.replace(' ', '-')}"
         session["buttons"].append(
             [InlineKeyboardButton("📥 Get Files 📥", url=url)])
 
@@ -495,7 +494,7 @@ async def handle_set_watermark(client, query, session):
         else:
             session["watermark"] = response.text
 
-#code is created by @VisualMovies1 for public use so atleast don't remove credits
+#code is created by @bharath_boy for public use so atleast don't remove credits
 async def handle_format_lang(client, query, session):
     response = await get_user_input(client, query, session, "Send the format for languages. Use `{langs}` as a placeholder. Send `/reset` for default.\n\n Current: " + session["lang_format"])
     if response and response.text:
@@ -531,7 +530,7 @@ async def handle_select_template(session, template_name):
     session["active_template"] = template_name
     session["caption"] = None
 
-#code is created by @VisualMovies1 for public use so atleast don't remove credits
+#code is created by @bharath_boy for public use so atleast don't remove credits
 async def handle_remove_buttons_menu(query, session):
     buttons = []
     for i, row in enumerate(session["buttons"]):
@@ -632,3 +631,4 @@ async def finalize_and_post(client: Client, query: CallbackQuery, session_id: in
 
 
 #code is created by @bharath_boy for public use so atleast don't remove credits
+
