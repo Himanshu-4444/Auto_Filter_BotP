@@ -238,7 +238,6 @@ Mᴇꜱꜱᴀɢᴇ : <b>{}</b>"""
 
 <blockquote>✨ ᴛɪᴛʟᴇ : <code>{filename}</code>
 
-
 🎭 ɢᴇɴʀᴇs : <b>{genres}</b>
 📺 ᴏᴛᴛ        : <b>{ott}</b>
 🎞️ ǫᴜᴀʟɪᴛʏ : <b>{quality}</b>
@@ -246,7 +245,6 @@ Mᴇꜱꜱᴀɢᴇ : <b>{}</b>"""
 🔥 ʀᴀᴛɪɴɢ   : <b>{rating}</b>
 {episodes}
 </blockquote>
-
 
 🔍 <b>Sᴇᴀʀᴄʜ →</b> {search_link}
 """
