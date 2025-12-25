@@ -245,6 +245,7 @@
 
         .video-container video {
             width: 100%;
+            height: auto;
             aspect-ratio: 16/9;
             object-fit: cover;
             display: block;
@@ -601,7 +602,7 @@
         }
 
         .card-btn:nth-child(4) {
-            background: linear-gradient(135deg, var(--primary-pink), #c4dc25);
+            background: linear-gradient(135deg, var(--primary-orange), #d97706);
             color: white;
         }
 
@@ -724,6 +725,37 @@
         ::-webkit-scrollbar-thumb {
             background: linear-gradient(var(--primary-cyan), var(--primary-purple));
             border-radius: 4px;
+        }
+
+        @media (max-width: 768px) {
+
+            .size-control {
+                display: none !important;
+            }
+            .plyr__controls {
+                justify-content: center !important;
+                flex-wrap: wrap !important;
+                width: auto !important;
+            }
+
+            .plyr__progress {
+                flex-basis: 10px !important;
+                width: auto !important;
+                margin: 10px 0 !important;
+            }
+            .plyr__time {
+                width: auto !important;
+                margin-left: 15px !important;
+                
+            }
+            .plyr__volume {
+                width: 0 50% !important;    
+                flex-basis: auto !important;
+            }
+            .plyr__mute {
+                margin-right: 10px !important;
+            }
+
         }
 
         /* Written by @VisualMovies1 || the credit should not be deleted */
